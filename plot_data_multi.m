@@ -39,11 +39,13 @@ end
 for param = ["dead nodes", "operating nodes", "total energy", "packets", "cluster heads"]
     i = i + 1;
     subplot(row_num, 3, i)
+    
     for algorithm=1:length(sim_params)
         sim_param = sim_params(algorithm);
         plot(1:rounds,sim_param(param),colors(algorithm),'Linewidth',2);
         hold on
     end
+    
     xlim([0 rounds]);
     axis tight
     title( [capitalize(param), 'Per Round'] );
